@@ -1,0 +1,8 @@
+# src-tauri/permissions/custom.toml
+
+[[permission]]
+identifier = "allow-updater-command"
+description = "Allows the frontend to run the custom update check"
+commands.allow = [
+    "check_for_updates_with_license"
+]

@@ -1,0 +1,10 @@
+from .upload import router as upload
+from .settings import router as settings
+from .scraper import router as scraper
+from .stats import router as stats
+from .logs import router as logs
+from .export import router as export
+from .handle_data_settings import router as handle_data_settings
+from .meta import router as meta
+from .product_activation import router as product_activation
+from .forensics import router as forensics

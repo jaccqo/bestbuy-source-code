@@ -1,0 +1,40 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "enables the default permissions with export support",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:default",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging",
+    "dialog:default",
+    "fs:allow-open",
+    "fs:allow-write-file",
+    "fs:read-all",
+    "notification:default",
+    "process:default",
+    "updater:default",
+    "process:allow-restart",
+    "process:allow-exit",
+    "http:default",
+    "allow-updater-command",
+    "shell:allow-open",
+    "clipboard-manager:allow-write-text",
+    "clipboard-manager:allow-read-text",
+
+    {
+      "identifier": "http:allow-fetch",
+      "allow": [
+        { "url": "https://bbscraper-proxy.vercel.app/*" },
+        { "url": "https://*.bestbuy.com/*" },
+        { "url": "http://localhost:3000/api/*" },
+        { "url": "http://127.0.0.1:5000/*" }
+      ]
+    }
+  ]
+}
