@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Best Buy Scraper — Desktop Automation & Data Collection
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A desktop product-data collection application built with **Tauri, Rust, React, TypeScript, Vite, Python, FastAPI, and Playwright**.
 
-Currently, two official plugins are available:
+This repository demonstrates full-stack desktop engineering, browser automation, background data collection, API integration, and operational dashboards. Originally built as a client project; shared as an engineering portfolio example with permission.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Highlights
 
-## React Compiler
+- **Desktop app:** Tauri-powered native shell with a React/TypeScript interface using Vite
+- **Python automation:** Playwright-based browser interaction and Best Buy product collection flows
+- **Backend APIs:** Python service with routes for scraper control, settings, data access, logs, exports, statistics and diagnostics
+- **Operational UI:** Dashboard, collection status, logs, configuration, import/export and data review
+- **Data processing:** Structured schemas, local persistence, asynchronous scraping workflows and reporting
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology stack
 
-## Expanding the ESLint configuration
+| Layer | Technologies |
+| --- | --- |
+| Desktop | Tauri, Rust |
+| Interface | React, TypeScript, Vite, Tailwind CSS |
+| Backend | Python, FastAPI, SQLAlchemy |
+| Automation | Playwright |
+| Data | Local database, structured JSON and CSV workflows |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Source layout
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `src/` — React dashboard, components, hooks and TypeScript application logic
+- `src-tauri/` — Rust desktop shell, Tauri configuration and permissions
+- `python-server/` — Python API server, scraping logic, models and routers
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Prerequisites: Node.js, npm, Rust and Tauri system prerequisites, and Python with pip. Browser automation also requires the appropriate Playwright browser installation.
+
+```bash
+npm install
+python -m venv .venv
+# Activate .venv for your system
+pip install -r python-server/requirements.txt
+python -m playwright install chromium
+npm run tauri dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The Python service may need to be launched separately depending on the development environment. This is a **portfolio source release**, not a turnkey production installer; packaging, original licensing services and update distribution were developed for a separate delivery environment.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Privacy and scope
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Runtime browser sessions, stored cookies, local environment variables, and debug data should **never be committed**. Historical commits may contain such files; review or replace repository history before switching visibility to public.
+
+Use this project in compliance with applicable site terms and policies. No credentials, authenticated sessions, or client-specific deployment configuration are distributed intentionally.
+
+## Author
+
+**Jackson** — [GitHub](https://github.com/jaccqo) · [Fiverr](https://www.fiverr.com/jacqol?public_mode=true)
